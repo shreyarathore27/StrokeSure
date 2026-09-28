@@ -1,0 +1,21 @@
+# Raw and processed data
+data/raw/
+data/processed/
+
+# Model files
+results/models/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Jupyter checkpoints
+.ipynb_checkpoints/
+
+# Virtual environments
+.venv/
+venv/
+
+# OS files
+.DS_Store
+Thumbs.db
