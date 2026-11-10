@@ -1,0 +1,1 @@
+"""StrokeSure automated tests."""
