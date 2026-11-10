@@ -175,12 +175,32 @@ class RecoveryRegressions(unittest.TestCase):
             # Release this test's experiment logger before any assertions so
             # an assertion failure also leaves Windows temp cleanup possible.
             import logging
-            for logger in list(logging.Logger.manager.loggerDict.values()):
-                if isinstance(logger, logging.Logger):
-                    for handler in list(logger.handlers):
-                        if getattr(handler, "baseFilename", "").startswith(directory):
-                            handler.close()
-                            logger.removeHandler(handler)
+            import os
+
+            expected_log = Path(directory) / "repeated_oof" / "repeated_oof.log"
+
+            loggers = [logging.getLogger()]
+            loggers.extend(
+                logger
+                for logger in list(logging.Logger.manager.loggerDict.values())
+                if isinstance(logger, logging.Logger)
+            )
+            for logger in loggers:
+                for handler in list(logger.handlers):
+                    filename = getattr(handler, "baseFilename", None)
+                    if not filename:
+                        continue
+                    try:
+                        matches_log = os.path.samefile(filename, expected_log)
+                    except OSError:
+                        # Also handle missing paths or unavailable file identity.
+                        matches_log = (
+                            os.path.normcase(os.path.realpath(filename))
+                            == os.path.normcase(os.path.realpath(expected_log))
+                        )
+                    if matches_log:
+                        logger.removeHandler(handler)
+                        handler.close()
             self.assertTrue(result.overall_passed, result.verification)
             import pandas as pd
             oof = pd.read_csv(result.paths["oof_predictions"])
