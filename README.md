@@ -156,6 +156,6 @@ StrokeSure is a research framework and should not be used as a medical diagnosti
 
 **Beyond Accuracy: A Robust and Explainable Machine Learning Framework for Stroke Risk Prediction Under Class Imbalance**
 
-Authors: Shreya Bisht, Shreya Rathore, Vaibhavi Singh.
+Authors: Shreya Rathore, Vaibhavi Singh.
 
 The manuscript documents the completed experimental study, findings and limitations.
