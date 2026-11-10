@@ -1,0 +1,22 @@
+# StrokeSure research environment
+# Pinned to the versions installed in .venv (Python 3.11.9, Windows x64).
+# Generated from `python -m pip list` on 2026-11-02; Step 26 additions on 2026-11-03.
+# Do not upgrade blindly.
+
+# Core scientific stack
+numpy==2.4.6
+scipy==1.17.1
+pandas==3.0.6
+
+# Machine learning
+scikit-learn==1.9.1
+joblib==1.6.0
+threadpoolctl==3.7.0
+
+# Class-imbalance strategies (Step 26)
+imbalanced-learn==0.14.2
+sklearn-compat==0.1.6
+
+# Notebook environment
+jupyter==1.1.1
+ipykernel==7.3.0

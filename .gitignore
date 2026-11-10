@@ -1,21 +1,23 @@
-# Raw and processed data
-data/raw/
-data/processed/
-
-# Model files
-results/models/
-
-# Python cache
-__pycache__/
-*.pyc
-
-# Jupyter checkpoints
-.ipynb_checkpoints/
-
-# Virtual environments
+﻿# Python
 .venv/
 venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ipynb_checkpoints/
 
-# OS files
-.DS_Store
-Thumbs.db
+# Temporary files and recovery backups
+*.bak
+*.log
+logs/
+recovery_backups/
+.deck-build/
+
+# Generated artifacts
+results/
+output/
+
+# Secrets and environment files
+.env
+.env.*
+!.env.example
