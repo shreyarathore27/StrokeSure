@@ -1,7 +1,7 @@
 ﻿# StrokeSure
 ### Beyond Accuracy: A Robust and Explainable Machine Learning Framework for Stroke Risk Prediction Under Class Imbalance
 
-**Authors:** Shreya Bisht, Shreya Rathore, Vaibhavi Singh  
+**Authors:** Shreya Rathore, Vaibhavi Singh  
 **Institution:** Indira Gandhi Delhi Technical University for Women  
 **Department:** Computer Science and Engineering (Artificial Intelligence)
 
